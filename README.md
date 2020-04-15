@@ -38,7 +38,7 @@ void using_ptr() {
 }
 ```
 
-Due to implicit conversions, T* and ptr<T> can be used interchangably! Hooray!
+Due to implicit conversions, `T*` and `ptr<T>` can be used interchangably! Hooray!
 
 If you want to be extra sure, you can either use the `adrr()` method or simply use a cast.
 
