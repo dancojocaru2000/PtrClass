@@ -10,7 +10,7 @@ void c_syntax() {
 }
 ```
 
-This is not helped by the addition to C++ of references:
+This is not helped by the addition of references to C++:
 
 ```cpp
 
@@ -23,11 +23,11 @@ namespace cpp_references {
 }
 ```
 
-Therefore, I created the following class: `ptr<T>`.
+Therefore, I created the `ptr<T>` class.
 
 Notice how the code above is improved:
 ```cpp
-#include <ptr.hpp>
+#include "ptr.hpp"
 using dcdevelop::ptr;
 
 void using_ptr() {
