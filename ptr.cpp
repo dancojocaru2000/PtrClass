@@ -48,6 +48,23 @@ namespace dcdevelop {
 		}
 
 		template <typename T>
+		template <typename Result>
+		Result& ptr<T>::map(Result& (*fp)(T value)) {
+			return (*fp)(this->deref());
+		}
+
+		template <typename T>
+		template <typename Result>
+		Result& ptr<T>::map_with_default(Result& (*fp)(T value), Result& default_value) {
+			if (this->is_null()) {
+				return default_value;
+			}
+			else {
+				return (*fp)(this->deref());
+			}
+		}
+
+		template <typename T>
 		bool ptr<T>::is_null() {
 			return this->raw_pointer == nullptr;
 		}

@@ -29,6 +29,12 @@ namespace dcdevelop {
 			inline T& dereference();
 			explicit operator T&();
 
+			template <typename Result>
+			Result& map(Result& (*fp)(T value));
+
+			template <typename Result>
+			Result& map_with_default(Result& (*fp)(T value), Result& default_value);
+
 			bool is_null();
 			void set_null();
 
