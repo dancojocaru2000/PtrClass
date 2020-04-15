@@ -89,5 +89,11 @@ void cstrings() {
 
 A lot of similar functions can be found in the header file, and they should be self descriptive.
 
+In order to use the C String functions, please define the following macro **before including the header** (or when compiling):
+
+```cpp
+#define DCDEVELOP_PTR_CLASS_CSTRING
+```
+
 ---
 ## Enjoy!
