@@ -143,18 +143,18 @@ namespace dcdevelop {
 		}
 
 		template <typename T>
-		bool ptr<T>::operator==(const T*& compareTo) {
+		bool ptr<T>::operator==(T*& compareTo) {
 			return this->raw_pointer == compareTo;
 		}
 
 		template <typename T>
 		template <typename EqualType>
-		bool ptr<T>::operator==(const EqualType& compareTo) {
+		bool ptr<T>::operator==(EqualType& compareTo) {
 			return this->raw_pointer == (T*)compareTo;
 		}
 
 		template <typename T>
-		bool ptr<T>::operator==(const ptr<T>& compareTo) {
+		bool ptr<T>::operator==(ptr<T>& compareTo) {
 			return this->raw_pointer == compareTo.raw_pointer;
 		}
 
