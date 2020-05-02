@@ -54,25 +54,26 @@ namespace dcdevelop {
 			template <typename DecrementType>
 			void operator-=(DecrementType number);
 
+			bool operator==(T*& compareTo);
+			bool operator==(ptr<T>& compareTo);
 			template <typename EqualType>
-			bool operator==(const EqualType& compareTo);
-			bool operator==(const ptr<T>& compareTo);
+			bool operator==(EqualType& compareTo);
 
 			template <typename EqualType>
-			bool operator!=(const EqualType& compareTo);
+			bool operator!=(EqualType& compareTo);
 
 			template <typename ComparisonType>
-			bool operator>(const ComparisonType& compareTo);
-			bool operator>(const ptr<T>& compareTo);
+			bool operator>(ComparisonType& compareTo);
+			bool operator>(ptr<T>& compareTo);
 
 			template <typename ComparisonType>
-			bool operator>=(const ComparisonType& compareTo);
+			bool operator>=(ComparisonType& compareTo);
 
 			template <typename ComparisonType>
-			bool operator<(const ComparisonType& compareTo);
+			bool operator<(ComparisonType& compareTo);
 
 			template <typename ComparisonType>
-			bool operator<=(const ComparisonType& compareTo);
+			bool operator<=(ComparisonType& compareTo);
 		};
 	}
 

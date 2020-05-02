@@ -143,48 +143,53 @@ namespace dcdevelop {
 		}
 
 		template <typename T>
-		template <typename EqualType>
-		bool ptr<T>::operator==(const EqualType& compareTo) {
+		bool ptr<T>::operator==(T*& compareTo) {
 			return this->raw_pointer == compareTo;
 		}
 
 		template <typename T>
-		bool ptr<T>::operator==(const ptr<T>& compareTo) {
+		template <typename EqualType>
+		bool ptr<T>::operator==(EqualType& compareTo) {
+			return this->raw_pointer == (T*)compareTo;
+		}
+
+		template <typename T>
+		bool ptr<T>::operator==(ptr<T>& compareTo) {
 			return this->raw_pointer == compareTo.raw_pointer;
 		}
 
 		template <typename T>
 		template <typename EqualType>
-		bool ptr<T>::operator!=(const EqualType& compareTo) {
-			return *this != compareTo;
+		bool ptr<T>::operator!=(EqualType& compareTo) {
+			return !(*this == compareTo);
 		}
 
 		template <typename T>
 		template <typename ComparisonType>
-		bool ptr<T>::operator>(const ComparisonType& compareTo) {
+		bool ptr<T>::operator>(ComparisonType& compareTo) {
 			return this->raw_pointer > compareTo;
 		}
 
 		template <typename T>
-		bool ptr<T>::operator>(const ptr<T>& compareTo) {
+		bool ptr<T>::operator>(ptr<T>& compareTo) {
 			return this->raw_pointer > compareTo.raw_pointer;
 		}
 
 		template <typename T>
 		template <typename ComparisonType>
-		bool ptr<T>::operator>=(const ComparisonType& compareTo) {
+		bool ptr<T>::operator>=(ComparisonType& compareTo) {
 			return *this == compareTo || *this > compareTo;
 		}
 
 		template <typename T>
 		template <typename ComparisonType>
-		bool ptr<T>::operator<(const ComparisonType& compareTo) {
+		bool ptr<T>::operator<(ComparisonType& compareTo) {
 			return !(*this >= compareTo);
 		}
 
 		template <typename T>
 		template <typename ComparisonType>
-		bool ptr<T>::operator<=(const ComparisonType& compareTo) {
+		bool ptr<T>::operator<=(ComparisonType& compareTo) {
 			return !(*this > compareTo);
 		}
 
